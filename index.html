@@ -89,15 +89,24 @@
 
 
               </div>
-
-
-              <!--  <h2>wrong Characters typed
+<!--  <h2>wrong Characters typed
                 <span id="wrong-text">
                   <strong>...Nothing.</strong>
                 </span>
               </h2>  -->
-              <h3>
-                <span id="question">Do you wish to continue?</span>
+<h3>
+  <span id="question">Do you wish to continue?
+ 
+  <button class="btn btn-primary" type="submit" id="yes" onclick="playAgain()" disabled>Yes</button>
+ <!--  <button class="btn btn-primary" type="submit" id="no" onclick="notAgain()" disabled>No</button> -->
+  <button type="button" class="btn btn-primary" id="no" data-toggle="modal" data-target="#myModal" disabled>
+    No
+  </button>
+  </span>
+  
+  
+
+ 
               </h3>
 
             </div>
@@ -105,14 +114,14 @@
         </div>
       </div>
       <div class="col-sm-4 sidenav">
-        <div class="well">
+        <div class="well" id="side1">
           <h2>Number of guesses
             <span id="numguess-text">
               <strong>...Nothing.</strong>
             </span>
           </h2>
         </div>
-        <div class="well">
+        <div class="well" id="side2">
           <div id="correctAnswer"></div>
           <div id="answerImage"></div>
           <h2>ComputerGuess is
@@ -124,6 +133,30 @@
       </div>
     </div>
   </div>
+
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Hangman Game</h4>
+      </div>
+      <div class="modal-body">
+        <p>Thanks for playing hope you liked my version of Hangman game!!!.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <script src="assets/javascript/game.js"></script>
 

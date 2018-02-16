@@ -8,6 +8,7 @@ var wrongCharArray = [];
 var rightCharArray = [];
 var winCount = 0;
 var numberOfGuesses = 10;
+var complete=0;
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 createButtons(computerGuess.length);
 document.getElementById("comp-text").textContent = computerGuess;
@@ -67,6 +68,14 @@ function deleteElement(length) {
   }
 }
 
+function deleteImage(){
+  var parent=document.getElementById("answerImage");
+  var child=document.getElementById("animalImg");
+  //parent.remove(child);
+  child.parentNode.removeChild(child);
+
+}
+
 //This function resets the game for the player to play again
 function clear() {
   userText.innerText = "";
@@ -80,6 +89,10 @@ function clear() {
   numberOfGuesses = 10;
   computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
   createButtons(computerGuess.length);
+  complete=0;
+
+  //remove image
+  deleteImage();
 
   //This code resets the green and red color buttons to its original color
   let line1 = document.getElementById("line1").querySelectorAll('div');
@@ -100,6 +113,7 @@ function printToConsole(text, value) {
   (text).innerText = value;
 }
 
+//This function prints the image to the screen
 function imageToConsole(location){
   var DOM_img = document.createElement("img");
   var DOM_parent=document.getElementById("answerImage");
@@ -107,10 +121,18 @@ function imageToConsole(location){
   //DOM_img.src = "assets/images/elephant.jpg";
   DOM_img.setAttribute("class","animal");
   DOM_img.setAttribute("alt","animal");
+  DOM_img.setAttribute("id","animalImg");
 
   DOM_parent.appendChild(DOM_img);
   //document.getElementById("answerImage").innerHTML("<img src='assets/images/'"+location+"'.jpg' class='animal' alt='animal'>");
+  complete=1;//This variable checks and stops adding more images 
 }
+
+function playAgain(){
+  clear();
+
+}
+
 
 
 
@@ -118,25 +140,30 @@ function imageToConsole(location){
 document.onkeyup = function (event) {
 
   userText.textContent = (event.key).toLowerCase();
-  console.log(userText.textContent);
+  
   var temp = userText.textContent;
-  console.log(temp);
+ 
 
   //alert(temp);
   //if(rightCharArray.length!==computerGuess.length && duplicateCharCheck(temp)){
-  if (duplicateCharCheck(temp)) {
+  if (duplicateCharCheck(temp) && complete==0) {
     // alert("inside dup");
     if (numberOfGuesses >= 1 && rightCharArray.length <= computerGuess.length) {
       if (computerGuess.includes(temp)) {
         characterPosition(temp);
         if (rightCharArray.length == computerGuess.length) {
-          printToConsole(correctAnswer, "You win!!!" + winCount++);
-          winCount++;
-          var user = confirm("You win!!!  " + winCount + " Do you want to play again?");
+        
+          printToConsole(correctAnswer, "You win !!! your score is" + ++winCount);
+          imageToConsole(computerGuess);
+          document.getElementById("yes").disabled=false;
+          document.getElementById("no").disabled=false;
+          
+          //winCount++;
+          /*var user = confirm("You win!!!  " + winCount + " Do you want to play again?");
           if (user) {
             clear();
 
-          }
+          }*/
 
         }
 
@@ -156,6 +183,8 @@ document.onkeyup = function (event) {
       var tempText="The correct word is " + computerGuess + " you lose";
       printToConsole(correctAnswer, tempText);
       imageToConsole(computerGuess);
+      document.getElementById("yes").disabled=false;
+      document.getElementById("no").disabled=false;
       /*alert("The correct word is" + computerGuess + "you lose");
       var user = confirm("Do you want to play again?")
       if (user) {

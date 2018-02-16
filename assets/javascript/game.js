@@ -11,6 +11,7 @@ var numberOfGuesses = 10;
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 createButtons(computerGuess.length);
 document.getElementById("comp-text").textContent = computerGuess;
+numguessText.textContent = numberOfGuesses;
 
 
 //This function creates the alphabet buttons
@@ -99,6 +100,18 @@ function printToConsole(text, value) {
   (text).innerText = value;
 }
 
+function imageToConsole(location){
+  var DOM_img = document.createElement("img");
+  var DOM_parent=document.getElementById("answerImage");
+  DOM_img.src = "assets/images/"+location+".jpg";
+  //DOM_img.src = "assets/images/elephant.jpg";
+  DOM_img.setAttribute("class","animal");
+  DOM_img.setAttribute("alt","animal");
+
+  DOM_parent.appendChild(DOM_img);
+  //document.getElementById("answerImage").innerHTML("<img src='assets/images/'"+location+"'.jpg' class='animal' alt='animal'>");
+}
+
 
 
 // Next, we give JavaScript a function to execute when onkeyup event fires.
@@ -140,13 +153,15 @@ document.onkeyup = function (event) {
       }
     }
     else {
-      printToConsole(correctAnswer, computerGuess);
-      alert("The correct word is" + computerGuess + "you lose");
+      var tempText="The correct word is " + computerGuess + " you lose";
+      printToConsole(correctAnswer, tempText);
+      imageToConsole(computerGuess);
+      /*alert("The correct word is" + computerGuess + "you lose");
       var user = confirm("Do you want to play again?")
       if (user) {
         clear();
-
-      }
+ 
+      }*/
 
 
     }

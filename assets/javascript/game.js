@@ -1,7 +1,7 @@
 // Let's start by grabbing a reference to the <span> below.
 var userText = document.getElementById("user-text");
 // var wrongText = document.getElementById("wrong-text");
-var computerChoices = ["elephant", "lion", "tiger"];
+var computerChoices = ["elephant", "lion", "tiger","giraffe","crocodile","gorilla","hippopotamus","kangaroo"];
 var numguessText = document.getElementById("numguess-text");
 var correctAnswer = document.getElementById("correctAnswer");
 var wrongCharArray = [];
@@ -11,7 +11,7 @@ var numberOfGuesses = 10;
 var complete=0;
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 createButtons(computerGuess.length);
-document.getElementById("comp-text").textContent = computerGuess;
+//document.getElementById("comp-text").textContent = computerGuess;
 numguessText.textContent = numberOfGuesses;
 
 
@@ -80,7 +80,7 @@ function deleteImage(){
 function clear() {
   userText.innerText = "";
   numguessText.innerText = "";
-  document.getElementById("comp-text").innerText = "";
+  //document.getElementById("comp-text").innerText = "";
   //wrongText.innerText = "";
   correctAnswer.innerText = "";
   deleteElement(computerGuess.length);
@@ -153,7 +153,7 @@ document.onkeyup = function (event) {
         characterPosition(temp);
         if (rightCharArray.length == computerGuess.length) {
         
-          printToConsole(correctAnswer, "You win !!! your score is" + ++winCount);
+          printToConsole(correctAnswer, "You win !!! your score is " + ++winCount);
           imageToConsole(computerGuess);
           document.getElementById("yes").disabled=false;
           document.getElementById("no").disabled=false;

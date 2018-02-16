@@ -334,6 +334,16 @@
       numberOfGuesses = 10;
       computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
       createbuttons(computerGuess.length);
+      //This code resets the green and red color buttons to its original color
+      let line1= document.getElementById("line1").querySelectorAll('div');
+       for( index=0; index < line1.length; index++ ) {
+              line1[index].style.backgroundColor="#f2f9fb";
+        }
+
+      let line2 = document.getElementById("line2").querySelectorAll('div');
+       for( index=0; index < line2.length; index++ ) {
+              line2[index].style.backgroundColor="#f2f9fb";
+        }  
 
     }
 
@@ -346,7 +356,7 @@
     }
     // Next, we give JavaScript a function to execute when onkeyup event fires.
     document.onkeyup = function (event) {
-
+     
       userText.textContent = (event.key).toLowerCase();
       console.log(userText.textContent);
       var temp = userText.textContent;
@@ -362,11 +372,11 @@
             if (rightCharArray.length == computerGuess.length) {
               printToConsole(correctAnswer, "You win!!!" + winCount++);
               winCount++;
-              /* var user=confirm("You win!!!"+winCount+"Do you want to play again?");
+               var user=confirm("You win!!!  "+winCount+" Do you want to play again?");
            if(user){
              clear();
              
-           } */
+           } 
 
             }
 
@@ -376,7 +386,7 @@
           else {
             //alert("wrong!!");
             wrongCharArray.push(temp);
-            //document.getElementById(temp).style.backgroundColor = "#e4afb5";
+            document.getElementById(temp).style.backgroundColor = "#e4afb5";
            // printToConsole(wrongText, wrongCharArray);
             --numberOfGuesses;
             printToConsole(numguessText, numberOfGuesses)

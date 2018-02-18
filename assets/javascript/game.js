@@ -20,6 +20,7 @@ var correctAnswer = document.getElementById("correctAnswer");
 var wrongCharArray = [];
 var rightCharArray = [];
 var winCount = 0;
+var loseCount=0;
 var numberOfGuesses = 10;
 var complete = 0;
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -161,7 +162,7 @@ document.onkeyup = function (event) {
       }
     }
     else {
-      var tempText = "The correct word is " + computerGuess + " you lose";
+      var tempText = "The correct word is " + computerGuess + " you lose " + ++loseCount +" times";
       printToConsole(correctAnswer, tempText);
       imageToConsole(computerGuess);
       document.getElementById("yes").disabled = false;

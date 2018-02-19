@@ -1,12 +1,11 @@
 # Hangman-Game
-<h1>Hangman-Game</h1>
 <hr>
 <ul>
 <li>A web app to play the popular ‘Hangman Game’ based on theme ‘Animal’</li>
 <li>Developed using Javascript, HTML5, CSS3 and Bootstrap </li>
 <li>Copy and paste the link to the browser to play the game  https://nvidyakarthik.github.io/Hangman-Game</li>
 <li>This game is designed and developed within a week period of time as an assignment for University of Arizona CodingBootcamp.</li>
-<li>The game works only when you press a key on keyboard.
+<li>The game works only when you press a key on keyboard.It is designed this way to meet the specifications of the assignment.This will be changed to button clicks in future.
 </ul>
 <hr>
 <h1>Game Rules</h1>
@@ -22,5 +21,5 @@
 </ul>
 
 <h1>Future enhancements</h1>
-I am planning to add more categories to this game like birds,colors,reptiles etc.Make the game more responsive so it can be accessed in all the devices.Add onclick events for the Alphabet buttons.Fix some minor User Interface issues with borders and margins.
+I am planning to add more categories to this game like birds,colors,reptiles etc.Make the game more responsive so it can be accessed in all the devices.Add onclick events for the Alphabet buttons.Fix some minor user Interface issues with borders and margins.
 

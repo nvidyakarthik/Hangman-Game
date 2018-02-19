@@ -1,5 +1,5 @@
 # Hangman-Game
-<hr>
+
 <ul>
 <li>A web app to play the popular ‘Hangman Game’ based on theme ‘Animal’</li>
 <li>Developed using Javascript, HTML5, CSS3 and Bootstrap </li>
@@ -7,7 +7,7 @@
 <li>This game is designed and developed within a week period of time as an assignment for University of Arizona CodingBootcamp.</li>
 <li>The game works only when you press a key on keyboard.It is designed this way to meet the specifications of the assignment.This will be changed to button clicks in future.
 </ul>
-<hr>
+
 <h1>Game Rules</h1>
 <ul>
 <li>Computer picks a random animal name from the list already provided.</li>

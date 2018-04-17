@@ -13,16 +13,23 @@
         color: #3a6b92c4;
         font-family: comic sans-serif;
         font-size: 18px;
+        margin-top: 20px;
     }
 
     h1 {
         font-size: 36px;
         color: #0a4990c4;
         font-family: comic sans-serif;
+        font-family: 'Berkshire Swash', cursive;
+    
     }
 
     h2{
         font-size: 26px;
+    }
+
+    #headingWell{
+        width: 1064px;
     }
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -54,6 +61,7 @@
 
     .container-fluid {
         width: 1080px;
+        
     }
 
     .animal{
@@ -66,6 +74,8 @@
 
     .well {
         background-color: #d1e9ef47;
+        
+       
     }
 
     div#side1 {

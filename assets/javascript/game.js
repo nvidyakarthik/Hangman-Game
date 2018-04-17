@@ -1,4 +1,4 @@
-//pseudocode
+//Pseudocode
 //Computer generates a random word from the list provided
 //Diplays a list of input boxes for each letter in the Computer guessed word
 //User presses a key in keyboard
